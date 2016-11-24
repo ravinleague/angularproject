@@ -1,0 +1,31 @@
+<section class="artistpage">
+	<div class="search">
+	<h1>Customer Directory</h1>
+	<label>search:</label>
+	<input ng-model="query" placeholder="Search for Customers" autofocus/>
+	<label class="formgroup">by:
+	<select ng-model="customerOrder">
+		<option value="name">Name</option>
+		<option value="balance">Balance</option>
+		
+	</select>
+	</label>
+	<label class="formgroup">
+		<input type="radio" ng-model="direction" checked name="direction">ascending</label>
+		<label class="formgroup"><input type="radio" ng-model="direction" value="reverse" name="direction">descending</input></label>
+</div>
+	<ul class="artistlist">
+		<li class="artist cf" ng-repeat="customer in customers | filter: query | orderBy: customerOrder:direction">
+		<a href="#/details/{{customers.indexOf(customer)}}">
+			<img ng-src="images/{{customer.picture}}.jpg" alt="Photo of {{customer.name}}"/>
+			<div class="info">
+				<h2>{{customer.name}}</h2>
+			</div>
+			<div class="info">
+				<h5>bal: {{customer.balance}}</h5>
+			</div>
+			</a>
+		</li>
+	</ul>
+</div>
+</section>

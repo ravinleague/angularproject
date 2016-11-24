@@ -1,0 +1,21 @@
+<section class="artistinfo">
+	<div class="atist cf" ng-model="customers">
+	<a class="btn btn-left" href="#/details/{{prevItem}}">&lt;</a>
+		<a class="btn btn-left" href="#/details/{{nextItem}}">&gt;</a>
+		<h1>{{customers[whichCustomer].name}}</h1>
+<img ng-src="images/{{customers[whichCustomer].picture}}.jpg" alt="photo of {{customers[whichCustomer].name}}"/>
+	</div>
+
+<div class="info">
+		<div class="bio">{{customers[whichCustomer].about}}</div>
+</div>
+
+<div class="info">
+		<div class="info">bal: {{customers[whichCustomer].balance}}</div>
+		<div class="info">gender: {{customers[whichCustomer].gender}}</div>
+	<a href="#/list">&laquo; Back to search</a>
+
+</div>
+
+
+</section>
